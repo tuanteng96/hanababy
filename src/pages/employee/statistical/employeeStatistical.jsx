@@ -602,6 +602,7 @@ export default class employeeStatistical extends React.Component {
                           formatPriceVietnamese(this.basicSalary(dataSalary))}
                       </div>
                     </div>
+<<<<<<< HEAD
                     <div className="tr">
                       <div className="td">Giữ lương</div>
                       <div className="td">
@@ -615,6 +616,21 @@ export default class employeeStatistical extends React.Component {
                                 )
                           )}
                       </div>
+=======
+                  </div>
+                  <div className="tr">
+                    <div className="td">Giữ lương</div>
+                    <div className="td">
+                      {dataSalary &&
+                        formatPriceVietnamese(
+                          dataSalary.TY_LE_GIU_LUONG > 100
+                            ? dataSalary.TY_LE_GIU_LUONG
+                            : Math.ceil(
+                                (this.basicSalary(dataSalary) / 100) *
+                                  dataSalary.TY_LE_GIU_LUONG
+                              )
+                        )}
+>>>>>>> refs/remotes/origin/main
                     </div>
                     <div className="tr">
                       <div className="td">Tạm ứng còn lại</div>
@@ -626,6 +642,7 @@ export default class employeeStatistical extends React.Component {
                           )}
                       </div>
                     </div>
+<<<<<<< HEAD
                     <div className="tr">
                       <div className="td">Lương thực nhận</div>
                       <div className="td">
@@ -644,6 +661,24 @@ export default class employeeStatistical extends React.Component {
                                 ))
                           )}
                       </div>
+=======
+                  </div>
+                  <div className="tr">
+                    <div className="td">Lương thực nhận</div>
+                    <div className="td">
+                      {dataSalary &&
+                        formatPriceVietnamese(
+                          this.basicSalary(dataSalary) -
+                            (dataSalary.TY_LE_GIU_LUONG > 100
+                              ? dataSalary.TY_LE_GIU_LUONG
+                              : Math.ceil(
+                                  (this.basicSalary(dataSalary) / 100) *
+                                    dataSalary.TY_LE_GIU_LUONG
+                                )) -
+                            (Math.abs(this.numTotal(dataSalary.TAM_UNG)) -
+                              Math.abs(this.numTotal(dataSalary.THU_HOAN_UNG)))
+                        )}
+>>>>>>> refs/remotes/origin/main
                     </div>
                   </div>
                 </div>
